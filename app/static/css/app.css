@@ -1,21 +1,21 @@
 body {
-  color: #2d3133;
-  background-color: #c6e2c3;
+  color: white;
+  background-color: rgb(61, 61, 61);
 }
 
 .canvas {
-  border: solid 1px black;
-  width: 280px;
-  height: 280px;
+  border: solid 5px rgb(96, 210, 238);
+  width: 500px;
+  height: 500px;
 }
 
 .clear-button {
-  width: 100px;
-  height: 30px;
-  background-color: rgb(253, 16, 16);
-  color: white;
+  width: 200px;
+  height: 60px;
+  background-color: rgb(233, 151, 151);
+  color: rgb(61, 61, 61);
   margin: 5px 0;
-  border-radius: 15px;
+  border-radius: 5px;
   border: none;
   outline: none;
   font-weight: bold;
@@ -23,17 +23,31 @@ body {
 
 .clear-button:active{
   border:1px solid #334c66;
-  background-color: rgb(131, 4, 25);
+  background-color: rgba(233, 151, 151, 0.5);
   color:#e0ebf5;
 }
 
-.send-button {
-  width: 100px;
-  height: 30px;
-  background-color: rgb(3, 185, 3);
-  color: white;
+.tweet-button {
+  display: inline-block;
+  width: 200px;
+  height: 60px;
+  line-height: 60px;
+  background-color: rgb(37, 173, 226);
+  color: rgb(61, 61, 61);
   margin: 5px 0;
-  border-radius: 15px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}
+
+.send-button {
+  width: 200px;
+  height: 60px;
+  background-color: rgb(144, 235, 144);
+  color: rgb(61, 61, 61);
+  margin: 5px 0;
+  border-radius: 5px;
   border: none;
   outline: none;
   font-weight: bold;
@@ -41,7 +55,7 @@ body {
 
 .send-button:active{
   border:1px solid #334c66;
-  background-color: rgb(4, 143, 22);
+  background-color: rgba(144, 235, 144, 0.5);
   color:#e0ebf5;
 }
 

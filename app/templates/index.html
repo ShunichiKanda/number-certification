@@ -8,15 +8,16 @@
   </head>
   <body onload="mam_draw_init();">
     <div align="center">
-      <h1>何の数字か当てるよ！ byあぽろ</h1>
+      <h1>1~9の数字を書いてね</h1>
       <div class="canvas" id="candiv">
-          <canvas id="can" width="280px" height="280px"></canvas>
+          <canvas id="can" width="500px" height="500px"></canvas>
       </div>
       <form action="/" method="post">
           <button type="button" onClick="clearCan();" value="クリア" class="clear-button">クリア</button>
           <button type="button" id="img" name="img" onClick="sendImage();" value="認識" class="send-button">認識</button>
       </form>
       <div id="answer"></div>
+      <div id="tweet"></div>
     </div>
   </body>
 </html>

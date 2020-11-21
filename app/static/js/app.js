@@ -2,6 +2,12 @@ var can;
 var ct;
 var ox = 0, oy = 0, x = 0, y = 0;
 var mf = false;
+
+var w = $('.canvas').width();
+var h = $('.canvas').height();
+$('#canvas').attr('width', w);
+$('#canvas').attr('height', h);
+
 function mam_draw_init() {
   can = document.getElementById("can");
   can.addEventListener("touchstart", onDown, false);
@@ -10,11 +16,14 @@ function mam_draw_init() {
   can.addEventListener("mousedown", onMouseDown, false);
   can.addEventListener("mousemove", onMouseMove, false);
   can.addEventListener("mouseup", onMouseUp, false);
+  // 2次元キャンバスを作成
   ct = can.getContext("2d");
   ct.strokeStyle = "#000000";
-  ct.lineWidth = 15;
-  ct.lineJoin = "round";
-  ct.lineCap = "round";
+  // ct.lineWidth = 1000;
+  // ct.lineJoin = "round";　//文字の角を丸くする
+  // ct.lineCap = "round"; //線端を丸くする
+  // can.width = 500;
+  // can.height = 500;
   clearCan();
 }
 function onDown(event) {
@@ -59,6 +68,9 @@ function drawLine() {
   ct.beginPath();
   ct.moveTo(ox, oy);
   ct.lineTo(x, y);
+  ct.lineWidth = 20;
+  ct.lineJoin = "round";　//文字の角を丸くする
+  ct.lineCap = "round"; //線端を丸くする
   ct.stroke();
 }
 function clearCan() {
@@ -68,6 +80,7 @@ function clearCan() {
 
 // 画像のサーバーへのPOST
 function sendImage() {
+  // Canvas要素をPNG画像として保存
   var img = document.getElementById("can").toDataURL('image/png');
   img = img.replace('image/png', 'image/octet-stream');
   $.ajax({
@@ -77,7 +90,10 @@ function sendImage() {
       "img": img
     }
   })
+  // 送信に成功した場合の処理
   .done( (data) => {
+    // $('#xxx')指定したID要素を取得
     $('#answer').html('答えは<span class="answer">'+data['ans']+'</span>です')
+    $('#tweet').html('<a href="https://twitter.com/" class="tweet-button">結果をTweetする</a>')
   });
 }
