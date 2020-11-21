@@ -19,11 +19,6 @@ function mam_draw_init() {
   // 2次元キャンバスを作成
   ct = can.getContext("2d");
   ct.strokeStyle = "#000000";
-  // ct.lineWidth = 1000;
-  // ct.lineJoin = "round";　//文字の角を丸くする
-  // ct.lineCap = "round"; //線端を丸くする
-  // can.width = 500;
-  // can.height = 500;
   clearCan();
 }
 function onDown(event) {
@@ -94,6 +89,6 @@ function sendImage() {
   .done( (data) => {
     // $('#xxx')指定したID要素を取得
     $('#answer').html('答えは<span class="answer">'+data['ans']+'</span>です')
-    $('#tweet').html('<a href="https://twitter.com/" class="tweet-button">結果をTweetする</a>')
+    $('#tweet').html('<a href="https://twitter.com/share?url=http://localhost:5000/&text=あなたの書いた数字は...' + data['ans'] + '" class="tweet-button">結果をTweetする</a>')
   });
 }
