@@ -63,7 +63,7 @@ function drawLine() {
   ct.beginPath();
   ct.moveTo(ox, oy);
   ct.lineTo(x, y);
-  ct.lineWidth = 20;
+  ct.lineWidth = 50;
   ct.lineJoin = "round";　//文字の角を丸くする
   ct.lineCap = "round"; //線端を丸くする
   ct.stroke();
