@@ -8,12 +8,10 @@ from keras import backend as K
 
 batch_size = 128
 num_classes = 10
-epochs = 12
+epochs = 50
 
-# input image dimensions
 img_rows, img_cols = 28, 28
 
-# the data, split between train and test sets
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 
 if K.image_data_format() == 'channels_first':
@@ -50,7 +48,7 @@ model.add(Dropout(0.5))
 model.add(Dense(num_classes, activation='softmax')) # softmaxで各数字である確率を出す
 
 model.compile(loss=keras.losses.categorical_crossentropy,
-              optimizer=keras.optimizers.Adadelta(),
+              optimizer=keras.optimizers.Adam(),
               metrics=['accuracy'])
 
 model.fit(x_train, y_train,
